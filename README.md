@@ -11,7 +11,7 @@ We also created a user-friendly graphical user interface (GUI) that allows users
 
 ## Pipeline
 
-![pipeline]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg](https://github.com/darmangerd/plate-recognition/blob/main/docs/pipeline.png)?raw=true)
+![pipeline](https://github.com/darmangerd/plate-recognition/blob/main/docs/pipeline.png?raw=true)
 
 During this project, our main objective was to implement functional license plate detection using classical image processing algorithms, while minimizing the use of Machine Learning. To begin, we implemented edge detection on the image. After performing a series of tests with the different methods seen in class (derivative, Prewitt, Sobel, Canny), we found that Canny's method is the most efficient. However, to obtain the best possible results, it is necessary to apply a Gaussian filter beforehand to remove the noise from the image, the size of the kernel can be modified in the program parameters in order to improve the detection on a specific image (`"GAUSSIAN_KERNEL"= [15, 15]`, works well in general). 
 
