@@ -1,0 +1,9 @@
+{
+    "ASPECT_RATIO_MIN_MAX": [0.3, 1.5],
+    "HEIGHT_MIN_MAX": [40, 140],
+    "WIDTH_MIN_MAX": [40, 140],
+    "MIN_SIZE_CONNECTED_COMPONENT": [10],
+    "CROP": [10, 10, 10, 10],
+    "SPLIT_CROP": [15],
+    "GAUSSIAN_KERNEL": [15, 15]
+}

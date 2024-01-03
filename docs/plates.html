@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module plates</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>plates</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/owen/local/abstracts/third_year/image/plates_git_2/lib/plates.py">/Users/owen/local/abstracts/third_year/image/plates_git_2/lib/plates.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="PIL.Image.html">PIL.Image</a><br>
+<a href="cv2.html">cv2</a><br>
+</td><td width="25%" valign=top><a href="lib.img.html">lib.img</a><br>
+<a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="plates.html#Plate">Plate</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Plate">class <strong>Plate</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Plate">Plate</a>(image_path:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Class&nbsp;that&nbsp;aggregates&nbsp;all&nbsp;the&nbsp;steps&nbsp;of&nbsp;the&nbsp;pipeline&nbsp;to&nbsp;detect&nbsp;a&nbsp;plate.<br>
+:param&nbsp;image_path:&nbsp;path&nbsp;to&nbsp;the&nbsp;image&nbsp;to&nbsp;process<br>
+:param&nbsp;annotation_path:&nbsp;path&nbsp;to&nbsp;the&nbsp;annotation&nbsp;file&nbsp;of&nbsp;the&nbsp;image<br>
+:param&nbsp;annotated_image_path:&nbsp;path&nbsp;to&nbsp;the&nbsp;annotated&nbsp;image<br>
+:param&nbsp;original_image:&nbsp;original&nbsp;image<br>
+:param&nbsp;original_image_cropped:&nbsp;original&nbsp;image&nbsp;cropped<br>
+:param&nbsp;canny_image:&nbsp;image&nbsp;after&nbsp;canny&nbsp;edge&nbsp;detection<br>
+:param&nbsp;connected_components_image:&nbsp;image&nbsp;after&nbsp;connected&nbsp;components&nbsp;detection<br>
+:param&nbsp;stats:&nbsp;stats&nbsp;of&nbsp;the&nbsp;connected&nbsp;components<br>
+:param&nbsp;potential_plates_regions:&nbsp;regions&nbsp;that&nbsp;could&nbsp;be&nbsp;a&nbsp;plate<br>
+:param&nbsp;all_regions:&nbsp;all&nbsp;the&nbsp;regions&nbsp;detected&nbsp;by&nbsp;the&nbsp;connected&nbsp;components<br>
+:param&nbsp;image_with_all_regions:&nbsp;image&nbsp;with&nbsp;all&nbsp;the&nbsp;regions&nbsp;detected&nbsp;drawn&nbsp;on&nbsp;it<br>
+:param&nbsp;potential_plates:&nbsp;potential&nbsp;plates&nbsp;images<br>
+:param&nbsp;potential_binarized_plates:&nbsp;potential&nbsp;binarized&nbsp;plates&nbsp;images<br>
+:param&nbsp;splited_potential_binarized_plates:&nbsp;potential&nbsp;binarized&nbsp;plates&nbsp;images&nbsp;splitted&nbsp;in&nbsp;two&nbsp;parts&nbsp;(up&nbsp;and&nbsp;down)<br>
+:param&nbsp;annotated_image:&nbsp;annotated&nbsp;image<br>
+:param&nbsp;detected_texts:&nbsp;detected&nbsp;texts&nbsp;on&nbsp;the&nbsp;plates<br>
+:param&nbsp;text:&nbsp;text&nbsp;of&nbsp;the&nbsp;annotation<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Plate-__init__"><strong>__init__</strong></a>(self, image_path: str) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Plate-calculate_accuracy"><strong>calculate_accuracy</strong></a>(text, detected_text)</dt><dd><tt>Calculate&nbsp;the&nbsp;accuracy&nbsp;of&nbsp;the&nbsp;detected&nbsp;text&nbsp;by&nbsp;comparing&nbsp;it&nbsp;to&nbsp;the&nbsp;ground&nbsp;truth&nbsp;text&nbsp;on&nbsp;every&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Plate-detect_connected_components"><strong>detect_connected_components</strong></a>(image: cv2.Mat) -&gt; Tuple[List[cv2.Mat], List[Tuple[int, int, int, int]]]</dt><dd><tt>From&nbsp;a&nbsp;Canny&nbsp;image,&nbsp;detect&nbsp;the&nbsp;connected&nbsp;components&nbsp;and&nbsp;return&nbsp;the&nbsp;image&nbsp;with&nbsp;the&nbsp;components&nbsp;and&nbsp;the&nbsp;stats.</tt></dd></dl>
+
+<dl><dt><a name="Plate-detect_plate"><strong>detect_plate</strong></a>(image: cv2.Mat) -&gt; Tuple[List[cv2.Mat], List[cv2.Mat]]</dt><dd><tt>Detect&nbsp;the&nbsp;potential&nbsp;plates&nbsp;in&nbsp;the&nbsp;image,&nbsp;by&nbsp;finding&nbsp;the&nbsp;contours&nbsp;of&nbsp;the&nbsp;connected&nbsp;components&nbsp;and&nbsp;filtering&nbsp;it&nbsp;based<br>
+on&nbsp;the&nbsp;ratio&nbsp;and&nbsp;size&nbsp;of&nbsp;the&nbsp;bounding&nbsp;rectangle.<br>
+&nbsp;<br>
+:param&nbsp;image:&nbsp;The&nbsp;image&nbsp;with&nbsp;the&nbsp;connected&nbsp;components.<br>
+:return:&nbsp;The&nbsp;contours&nbsp;of&nbsp;the&nbsp;potential&nbsp;plates&nbsp;and&nbsp;all&nbsp;the&nbsp;contours.</tt></dd></dl>
+
+<dl><dt><a name="Plate-detect_text"><strong>detect_text</strong></a>(image: cv2.Mat) -&gt; str</dt><dd><tt>Detect&nbsp;the&nbsp;text&nbsp;in&nbsp;the&nbsp;image&nbsp;using&nbsp;the&nbsp;OCR&nbsp;model.<br>
+:param&nbsp;image:&nbsp;The&nbsp;image&nbsp;to&nbsp;detect&nbsp;the&nbsp;text&nbsp;from.<br>
+:return:&nbsp;The&nbsp;text&nbsp;detected&nbsp;in&nbsp;the&nbsp;image.</tt></dd></dl>
+
+<dl><dt><a name="Plate-draw_annotation"><strong>draw_annotation</strong></a>(image: cv2.Mat, objects: List[Tuple[str, int, int, int, int]]) -&gt; cv2.Mat</dt><dd><tt>Draw&nbsp;the&nbsp;annotation&nbsp;on&nbsp;the&nbsp;image.</tt></dd></dl>
+
+<dl><dt><a name="Plate-load_annotation"><strong>load_annotation</strong></a>(annotation_path: str) -&gt; Tuple[str, List[Tuple[str, int, int, int, int]]]</dt><dd><tt>Load&nbsp;the&nbsp;annotation&nbsp;of&nbsp;the&nbsp;image&nbsp;if&nbsp;it&nbsp;exists.<br>
+:return:&nbsp;the&nbsp;text&nbsp;of&nbsp;the&nbsp;annotation&nbsp;and&nbsp;the&nbsp;objects&nbsp;of&nbsp;the&nbsp;annotation</tt></dd></dl>
+
+<dl><dt><a name="Plate-preprocess_image"><strong>preprocess_image</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Preprocess&nbsp;the&nbsp;image&nbsp;by&nbsp;applying:<br>
+-&nbsp;Gaussian&nbsp;filter&nbsp;to&nbsp;remove&nbsp;noise<br>
+-&nbsp;Canny&nbsp;to&nbsp;detect&nbsp;the&nbsp;edges</tt></dd></dl>
+
+<dl><dt><a name="Plate-read_setting"><strong>read_setting</strong></a>(key: str) -&gt; Any</dt><dd><tt>Read&nbsp;a&nbsp;setting&nbsp;from&nbsp;the&nbsp;settings&nbsp;file.<br>
+:param&nbsp;key:&nbsp;The&nbsp;key&nbsp;of&nbsp;the&nbsp;setting.<br>
+:return:&nbsp;The&nbsp;value&nbsp;of&nbsp;the&nbsp;setting.</tt></dd></dl>
+
+<dl><dt><a name="Plate-split_plate"><strong>split_plate</strong></a>(image: cv2.Mat, margin: int = 15) -&gt; Tuple[cv2.Mat, cv2.Mat, cv2.Mat]</dt><dd><tt>Split&nbsp;the&nbsp;plate&nbsp;in&nbsp;two&nbsp;parts,&nbsp;the&nbsp;upper&nbsp;part&nbsp;and&nbsp;the&nbsp;lower&nbsp;part.<br>
+Because&nbsp;the&nbsp;OCR&nbsp;cannot&nbsp;isn't&nbsp;efficient&nbsp;at&nbsp;reading&nbsp;a&nbsp;text&nbsp;that&nbsp;as&nbsp;multiple&nbsp;lines,&nbsp;we&nbsp;need&nbsp;to&nbsp;split&nbsp;the&nbsp;plate&nbsp;in&nbsp;two<br>
+:param&nbsp;image:&nbsp;The&nbsp;image&nbsp;of&nbsp;the&nbsp;plate.<br>
+:param&nbsp;margin:&nbsp;The&nbsp;margin&nbsp;to&nbsp;add&nbsp;to&nbsp;the&nbsp;image&nbsp;to&nbsp;avoid&nbsp;the&nbsp;edges.<br>
+:return:&nbsp;The&nbsp;upper&nbsp;part&nbsp;and&nbsp;the&nbsp;lower&nbsp;part&nbsp;of&nbsp;the&nbsp;plate.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>accuracies</strong> = []</dl>
+
+<dl><dt><strong>all_regions</strong> = []</dl>
+
+<dl><dt><strong>annotated_image</strong> = None</dl>
+
+<dl><dt><strong>canny_image</strong> = None</dl>
+
+<dl><dt><strong>connected_components_image</strong> = None</dl>
+
+<dl><dt><strong>detected_texts</strong> = []</dl>
+
+<dl><dt><strong>image_path</strong> = None</dl>
+
+<dl><dt><strong>image_with_all_regions</strong> = None</dl>
+
+<dl><dt><strong>original_image</strong> = None</dl>
+
+<dl><dt><strong>original_image_cropped</strong> = None</dl>
+
+<dl><dt><strong>potential_binarized_plates</strong> = []</dl>
+
+<dl><dt><strong>potential_plates</strong> = []</dl>
+
+<dl><dt><strong>potential_plates_regions</strong> = []</dl>
+
+<dl><dt><strong>splited_potential_binarized_plates</strong> = []</dl>
+
+<dl><dt><strong>stats</strong> = None</dl>
+
+<dl><dt><strong>text</strong> = None</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>ANNOTATIONS_PATH</strong> = 'annotations/annotations'<br>
+<strong>Any</strong> = typing.Any<br>
+<strong>IMAGES_ANNOTATIONS_PATH</strong> = 'annotations/images'<br>
+<strong>IMAGES_PATH</strong> = 'images'<br>
+<strong>List</strong> = typing.List<br>
+<strong>MODEL</strong> = VisionEncoderDecoderModel(
+  (encoder): ViTModel...tures=1024, out_features=50265, bias=False)
+  )
+)<br>
+<strong>PROCESSOR</strong> = TrOCRProcessor:
+- image_processor: ViTImageProce...alized=True)}, clean_up_tokenization_spaces=True)<br>
+<strong>SETTINGS_PATH</strong> = 'cache/settings.json'<br>
+<strong>Tuple</strong> = typing.Tuple</td></tr></table>
+</body></html>

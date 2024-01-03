@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module img</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>img</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/owen/local/abstracts/third_year/image/plates_git_2/lib/img.py">/Users/owen/local/abstracts/third_year/image/plates_git_2/lib/img.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="cv2.html">cv2</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-apply_masks"><strong>apply_masks</strong></a>(image: cv2.Mat, masks: List[int]) -&gt; List[cv2.Mat]</dt><dd><tt>Apply&nbsp;masks&nbsp;to&nbsp;image&nbsp;and&nbsp;return&nbsp;a&nbsp;list&nbsp;of&nbsp;images,&nbsp;should&nbsp;be&nbsp;binary&nbsp;masks&nbsp;(0b00000000)</tt></dd></dl>
+ <dl><dt><a name="-binarize"><strong>binarize</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Binarize&nbsp;an&nbsp;image&nbsp;using&nbsp;Otsu's&nbsp;method<br>
+:param&nbsp;image:&nbsp;image&nbsp;to&nbsp;binarize<br>
+:return:&nbsp;binarized&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-border_with_xor"><strong>border_with_xor</strong></a>(imageA: cv2.Mat, imageB: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Get&nbsp;the&nbsp;borders&nbsp;of&nbsp;subjects&nbsp;with&nbsp;dilation&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-clahe"><strong>clahe</strong></a>(image: cv2.Mat, clipLimit: float = 2.0, tileGridSize: Tuple[int, int] = (8, 8)) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;CLAHE&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-closing"><strong>closing</strong></a>(image: cv2.Mat, kernel: cv2.Mat, iterations: int = 1) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;closing&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-color_channels"><strong>color_channels</strong></a>(image: cv2.Mat) -&gt; Tuple[cv2.Mat, cv2.Mat, cv2.Mat]</dt><dd><tt>Split&nbsp;image&nbsp;into&nbsp;3&nbsp;channels,&nbsp;return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;3&nbsp;images&nbsp;(R,&nbsp;G,&nbsp;B)</tt></dd></dl>
+ <dl><dt><a name="-color_channels_with_numpy"><strong>color_channels_with_numpy</strong></a>(image: cv2.Mat) -&gt; Tuple[cv2.Mat, cv2.Mat, cv2.Mat]</dt><dd><tt>Split&nbsp;image&nbsp;into&nbsp;3&nbsp;channels,&nbsp;return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;3&nbsp;images&nbsp;(R,&nbsp;G,&nbsp;B)</tt></dd></dl>
+ <dl><dt><a name="-convolve"><strong>convolve</strong></a>(image: cv2.Mat, kernel: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;convolution&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-crop_image"><strong>crop_image</strong></a>(image: cv2.Mat, start_top: int, start_left: int, end_bottom: int, end_right: int) -&gt; cv2.Mat</dt></dl>
+ <dl><dt><a name="-dilation"><strong>dilation</strong></a>(image: cv2.Mat, kernel: cv2.Mat, iterations: int = 1) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;dilation&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-draw_regions"><strong>draw_regions</strong></a>(image: cv2.Mat, regions, color=(0, 255, 0), thickness=2, label: Callable[[int], str] = None)</dt><dd><tt>Draw&nbsp;regions&nbsp;on&nbsp;image<br>
+:param&nbsp;image:&nbsp;image&nbsp;to&nbsp;draw&nbsp;regions&nbsp;on<br>
+:param&nbsp;regions:&nbsp;regions&nbsp;to&nbsp;draw<br>
+:param&nbsp;color:&nbsp;color&nbsp;of&nbsp;the&nbsp;regions<br>
+:param&nbsp;thickness:&nbsp;thickness&nbsp;of&nbsp;the&nbsp;regions<br>
+:param&nbsp;label:&nbsp;label&nbsp;of&nbsp;the&nbsp;regions<br>
+:return:&nbsp;image&nbsp;with&nbsp;regions&nbsp;drawn</tt></dd></dl>
+ <dl><dt><a name="-equalize_histogram"><strong>equalize_histogram</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Equalize&nbsp;image&nbsp;histogram</tt></dd></dl>
+ <dl><dt><a name="-erosion"><strong>erosion</strong></a>(image: cv2.Mat, kernel: cv2.Mat, iterations: int = 1) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;erosion&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-fourier_transform"><strong>fourier_transform</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;fourier&nbsp;transform&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-gaussian_blur"><strong>gaussian_blur</strong></a>(image: cv2.Mat, kernel_size: Tuple[int, int] = (5, 5)) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;gaussian&nbsp;blur&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-gray"><strong>gray</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Convert&nbsp;image&nbsp;to&nbsp;gray&nbsp;scale</tt></dd></dl>
+ <dl><dt><a name="-histogram"><strong>histogram</strong></a>(image: cv2.Mat, name: str) -&gt; None</dt><dd><tt>Plot&nbsp;histogram&nbsp;of&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-hsv"><strong>hsv</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Convert&nbsp;image&nbsp;to&nbsp;HSV</tt></dd></dl>
+ <dl><dt><a name="-increase_contrast_image_with_lut"><strong>increase_contrast_image_with_lut</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Increase&nbsp;contrast&nbsp;of&nbsp;image&nbsp;using&nbsp;LUT</tt></dd></dl>
+ <dl><dt><a name="-magnitude_spectrum"><strong>magnitude_spectrum</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;magnitude&nbsp;spectrum&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-morphological_transformations"><strong>morphological_transformations</strong></a>(image: cv2.Mat, kernel: cv2.Mat, iterations: int = 1, type: int = 2) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;morphological&nbsp;transformations&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-negative"><strong>negative</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;negative&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-normalize"><strong>normalize</strong></a>(image: cv2.Mat, min: int = 0, max: int = 255) -&gt; cv2.Mat</dt><dd><tt>Normalize&nbsp;image&nbsp;to&nbsp;[min,&nbsp;max]</tt></dd></dl>
+ <dl><dt><a name="-opening"><strong>opening</strong></a>(image: cv2.Mat, kernel: cv2.Mat, iterations: int = 1) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;opening&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-phase_spectrum"><strong>phase_spectrum</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;phase&nbsp;spectrum&nbsp;to&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-print_images_infos"><strong>print_images_infos</strong></a>(images: List[cv2.Mat], title: Callable[[cv2.Mat, int], str] = None) -&gt; None</dt><dd><tt>Print&nbsp;images&nbsp;infos<br>
+&nbsp;<br>
+-&nbsp;the&nbsp;name<br>
+-&nbsp;the&nbsp;definition&nbsp;(width&nbsp;x&nbsp;height)<br>
+-&nbsp;the&nbsp;data&nbsp;type<br>
+-&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes<br>
+-&nbsp;the&nbsp;number&nbsp;of&nbsp;channels<br>
+-&nbsp;the&nbsp;minimum&nbsp;value<br>
+-&nbsp;the&nbsp;maximum&nbsp;value<br>
+-&nbsp;the&nbsp;average&nbsp;value<br>
+-&nbsp;the&nbsp;standard&nbsp;deviation<br>
+-&nbsp;the&nbsp;mode</tt></dd></dl>
+ <dl><dt><a name="-print_infos"><strong>print_infos</strong></a>(image: cv2.Mat, title: str = None) -&gt; None</dt><dd><tt>Print&nbsp;image&nbsp;infos<br>
+&nbsp;<br>
+-&nbsp;the&nbsp;name<br>
+-&nbsp;the&nbsp;definition&nbsp;(width&nbsp;x&nbsp;height)<br>
+-&nbsp;the&nbsp;data&nbsp;type<br>
+-&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes<br>
+-&nbsp;the&nbsp;number&nbsp;of&nbsp;channels<br>
+-&nbsp;the&nbsp;minimum&nbsp;value<br>
+-&nbsp;the&nbsp;maximum&nbsp;value<br>
+-&nbsp;the&nbsp;average&nbsp;value<br>
+-&nbsp;the&nbsp;standard&nbsp;deviation<br>
+-&nbsp;the&nbsp;mode</tt></dd></dl>
+ <dl><dt><a name="-read"><strong>read</strong></a>(path: str) -&gt; cv2.Mat</dt><dd><tt>Read&nbsp;image&nbsp;from&nbsp;disk</tt></dd></dl>
+ <dl><dt><a name="-read_images"><strong>read_images</strong></a>(paths: List[str]) -&gt; List[cv2.Mat]</dt><dd><tt>Read&nbsp;images&nbsp;from&nbsp;disk</tt></dd></dl>
+ <dl><dt><a name="-resize"><strong>resize</strong></a>(image: cv2.Mat, width: int, height: int, interpolation=1) -&gt; cv2.Mat</dt><dd><tt>Resize&nbsp;image<br>
+:param&nbsp;image:&nbsp;image&nbsp;to&nbsp;resize<br>
+:param&nbsp;width:&nbsp;new&nbsp;width<br>
+:param&nbsp;height:&nbsp;new&nbsp;height<br>
+:param&nbsp;interpolation:&nbsp;interpolation&nbsp;method&nbsp;(cv2.INTER_AREA,&nbsp;cv2.INTER_CUBIC,&nbsp;cv2.INTER_LINEAR,&nbsp;cv2.INTER_NEAREST)<br>
+:return:&nbsp;resized&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-resize_to_match_width"><strong>resize_to_match_width</strong></a>(image: cv2.Mat, width: int, interpolation=1) -&gt; cv2.Mat</dt><dd><tt>Resize&nbsp;image&nbsp;to&nbsp;match&nbsp;a&nbsp;given&nbsp;width<br>
+:param&nbsp;image:&nbsp;image&nbsp;to&nbsp;resize<br>
+:param&nbsp;width:&nbsp;new&nbsp;width<br>
+:param&nbsp;interpolation:&nbsp;interpolation&nbsp;method&nbsp;(cv2.INTER_AREA,&nbsp;cv2.INTER_CUBIC,&nbsp;cv2.INTER_LINEAR,&nbsp;cv2.INTER_NEAREST)<br>
+:return:&nbsp;resized&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-rgb"><strong>rgb</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Convert&nbsp;image&nbsp;to&nbsp;RGB</tt></dd></dl>
+ <dl><dt><a name="-save"><strong>save</strong></a>(image: cv2.Mat, path: str = None) -&gt; None</dt><dd><tt>Save&nbsp;image&nbsp;to&nbsp;disk</tt></dd></dl>
+ <dl><dt><a name="-save_images"><strong>save_images</strong></a>(images: cv2.Mat, title: Callable[[cv2.Mat, int], str] = None) -&gt; None</dt><dd><tt>Save&nbsp;images&nbsp;to&nbsp;disk</tt></dd></dl>
+ <dl><dt><a name="-scale"><strong>scale</strong></a>(image: cv2.Mat, scale: float, interpolation: int = 0) -&gt; cv2.Mat</dt><dd><tt>Scale&nbsp;image<br>
+:param&nbsp;image:&nbsp;image&nbsp;to&nbsp;scale<br>
+:param&nbsp;scale:&nbsp;scale&nbsp;factor<br>
+:param&nbsp;interpolation:&nbsp;interpolation&nbsp;method<br>
+:return:&nbsp;scaled&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-select_region"><strong>select_region</strong></a>(image: cv2.Mat, region) -&gt; cv2.Mat</dt><dd><tt>Select&nbsp;a&nbsp;region&nbsp;from&nbsp;an&nbsp;image<br>
+:param&nbsp;image:&nbsp;image&nbsp;to&nbsp;select&nbsp;region&nbsp;from<br>
+:param&nbsp;region:&nbsp;region&nbsp;to&nbsp;select<br>
+:return:&nbsp;selected&nbsp;region</tt></dd></dl>
+ <dl><dt><a name="-show"><strong>show</strong></a>(image: cv2.Mat, name: str = None, cmap: str = None) -&gt; None</dt><dd><tt>Show&nbsp;image&nbsp;with&nbsp;matplotlib</tt></dd></dl>
+ <dl><dt><a name="-slot_threshold"><strong>slot_threshold</strong></a>(image: cv2.Mat, low_threshold: int, high_threshold: int) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;slot&nbsp;threshold&nbsp;to&nbsp;image:<br>
+-&nbsp;low_threshold&nbsp;&lt;&nbsp;img&nbsp;&lt;&nbsp;high_threshold&nbsp;--&gt;&nbsp;255<br>
+-&nbsp;img&nbsp;&lt;&nbsp;low_threshold&nbsp;or&nbsp;img&nbsp;&gt;&nbsp;high_threshold&nbsp;--&gt;&nbsp;0</tt></dd></dl>
+ <dl><dt><a name="-split"><strong>split</strong></a>(image: cv2.Mat) -&gt; cv2.Mat</dt><dd><tt>Split&nbsp;image&nbsp;into&nbsp;channels</tt></dd></dl>
+ <dl><dt><a name="-subplot_channels"><strong>subplot_channels</strong></a>(image: cv2.Mat, name: str, channels: Tuple[str, str, str] = ('b', 'g', 'r')) -&gt; None</dt><dd><tt>Show&nbsp;colors&nbsp;channels&nbsp;in&nbsp;subplots&nbsp;with&nbsp;matplotlib</tt></dd></dl>
+ <dl><dt><a name="-subplot_channels_histogram"><strong>subplot_channels_histogram</strong></a>(image: cv2.Mat, name: str, channels: Tuple[str, str, str] = ('b', 'g', 'r')) -&gt; None</dt><dd><tt>Plot&nbsp;colors&nbsp;histogram&nbsp;of&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-subplot_channels_histogram_images"><strong>subplot_channels_histogram_images</strong></a>(images: List[cv2.Mat], title: Callable[[cv2.Mat, int, str], str] = None, channels: Tuple[str, str, str] = ('b', 'g', 'r')) -&gt; None</dt><dd><tt>Plot&nbsp;colors&nbsp;histogram&nbsp;of&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-subplot_channels_images"><strong>subplot_channels_images</strong></a>(images: List[cv2.Mat], title: Callable[[cv2.Mat, int, str], str] = None, channels: Tuple[str, str, str] = ('b', 'g', 'r')) -&gt; None</dt><dd><tt>Show&nbsp;colors&nbsp;channels&nbsp;in&nbsp;subplots&nbsp;with&nbsp;matplotlib</tt></dd></dl>
+ <dl><dt><a name="-subplot_histograms"><strong>subplot_histograms</strong></a>(images: List[cv2.Mat], title: Callable[[cv2.Mat, int], str] = None) -&gt; None</dt><dd><tt>Plot&nbsp;histograms&nbsp;of&nbsp;images</tt></dd></dl>
+ <dl><dt><a name="-subplot_images"><strong>subplot_images</strong></a>(images: List[cv2.Mat], title: Callable[[cv2.Mat, int], str] = None, cmap: str = None, n_rows: int = 1, n_cols: int = None, figsize: Tuple[int, int] = (20, 10)) -&gt; None</dt><dd><tt>Show&nbsp;images&nbsp;in&nbsp;subplots&nbsp;with&nbsp;matplotlib</tt></dd></dl>
+ <dl><dt><a name="-threshold"><strong>threshold</strong></a>(image: cv2.Mat, threshold: int, max_t: int = 255, type: int = 0) -&gt; cv2.Mat</dt><dd><tt>Apply&nbsp;threshold&nbsp;to&nbsp;image</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Callable</strong> = typing.Callable<br>
+<strong>List</strong> = typing.List<br>
+<strong>Tuple</strong> = typing.Tuple</td></tr></table>
+</body></html>
