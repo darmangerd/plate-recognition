@@ -51,3 +51,7 @@ Finally, each region potentially detected as a license plate is converted into a
 pip install -r requirements.txt
 python gallery_ui.py
 ```
+
+## Contributors
+- [Owen Gombas](https://github.com/owengombas/)
+- [David Darmanger](https://github.com/darmangerd/)
