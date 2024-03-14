@@ -54,4 +54,4 @@ python gallery_ui.py
 
 ## Contributors
 - [Owen Gombas](https://github.com/owengombas/)
-- [David Darmanger](https://github.com/darmangerd/)
+- [Aria David Darmanger](https://github.com/darmangerd/)
